@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --dark-pink: #bf3676;
+    --dark-blue-grey: #2f2359;
+    --blueberry: #4c3991;
+    --black: #222222;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    white-space:nowrap
+}
+
+ul {
+    list-style-type: none;
+}
+
+p{
+    font-size: 16px;
+}
+
+
+ /* HEADER */
+
+header {
+    padding: 40px 110px 35px 110px;
+    background-image: url(../img/header.png), linear-gradient(to right, var(--dark-blue-grey), var(--blueberry));
+    background-repeat: no-repeat;
+    background-position: 100% 70%;
+}
+
+header .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: white;
+    display: inline-block;
+    font-size: 18px;
+}
+
+header nav a:not(.link-button)::after{
+    content: '';
+    display: block;
+    width: 0;
+    margin-top: 5px;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+header nav a:not(.link-button):hover::after{
+    width: 100%;
+}
+
+header nav a:not(.link-button){
+    padding: 5px 15px;
+    margin-right: 30px;
+}
+
+.link-button {
+    color: white;
+    padding: 15px 26px;
+    border-radius: 30px;
+    background-color: var(--dark-pink);
+    width: fit-content;
+    transition: 0.5s;
+}
+
+.link-button:hover{
+    box-shadow: 5px 5px 10px black;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header article{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 250px;
+    margin-left: 5%;
+    width: 40%;
+}
+
+header article h1{
+    font-size: 46px;
+    font-weight: 800;
+}
+
+header article p{
+    margin-top: 35px;
+}
+
+header article .link-button{
+    margin-top: 48px;
+    font-size: 20px;
+    padding: 12px 30px;
+}
+
+
+.arrow{
+    display: flex;
+    justify-content: center;
+    margin-top: 235px;
+}
+
+/* MAIN PART 1 - INTRO*/
+
+.intro{
+    position: relative;
+    padding-top: 65px;
+    padding-bottom: 120px;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.intro h2{
+    text-align: center;
+    color: var(--dark-pink);
+    font-size: 49px;
+    font-weight: bold;
+}
+
+.intro hr{
+    width: 250px;
+    margin: 0 auto;
+    border: none;
+    height: 2px;
+    margin-top: 28px;
+    background-color: var(--dark-pink);
+}
+
+.intro .desc{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    width: 56%;
+    margin: 0 auto;
+    margin-top: 60px;
+    color: var(--dark);
+}
+
+.section-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.section-container > div{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.section-container section{
+    display: flex;
+    align-items: center;
+    margin-top: 95px;
+}
+
+.section-container img{
+    padding-right: 30px;
+}
+
+.section-container .title{
+    display: flex;
+    align-items: center;
+}
+
+.section-container h3::after{
+    content: " ";
+    display: inline-block;
+    width: 10px;
+    top: -2px;
+    position: relative;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dark-pink);
+    margin-left: 12px;
+}
+
+.section-container h3{
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.section-container p{
+    font-weight: 500;
+    margin-top: 11px;
+}
+
+.fufu{
+    position: absolute;
+    top: 50%;
+    right: -70px;
+    transform: rotate(90deg);
+    font-size: 7px;
+    color: #929292;
+}
+
+.intro .link-button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 115px;
+}
+
+/* MAIN PART 2 - DISCOVER */
+
+.discover{
+    padding: 60px 110px 125px 110px;
+}
+
+.discover h2{
+    font-size: 41px;
+    font-weight: bold;
+    color: var(--dark-pink);
+}
+
+.discover hr{
+    border: none;
+    height: 3px;
+    background-color: var(--dark-pink);
+    width: 250px;
+    margin-top: 30px;
+}
+
+.vignette-container{
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 65px;
+}
+
+.vignette-container::-webkit-scrollbar{
+    display: none;
+} 
+
+.vignette{
+    display: flex;  
+    align-items: center;
+    width: 500px;
+    padding: 42px 23px;
+    margin-right: 45px;
+    border-radius: 10px;
+    box-shadow: 1px 10px 16px 1px rgba(98, 98, 98, 0.19);
+}
+
+.vignette .content{
+    margin-left: 35px;
+    white-space: nowrap;
+}
+
+.tags span{
+    color: white;
+    font-size: 12px;
+    padding: 3px 15px;
+    border-radius: 10px;
+    background-color: #d3c4f2;
+    margin-right: 7px;
+}
+
+.content h3{
+    font-size: 21px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.content p{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.vignette .players{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+}
+
+.vignette .players .over{
+    margin-left: -5%;
+}
+
+.players p{
+    font-size: 16px;
+    font-weight: 300;
+    color: #747474;
+    margin-left: 11px;
+}
+
+.slider li{
+    display: inline-block;
+}
+
+.bullet-points{
+    display: flex;
+    justify-content: center;
+}
+
+.bullet{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #818181;
+    margin: 0 5px;
+}
+
+.bullet:hover{
+    cursor: pointer;
+}
+
+#bullet-one{
+    background-color: var(--dark-pink);
+}
+
+/* MAIN PART 3 - PARIS */
+
+.pari{
+    background-image: url(../img/paris-personnalises.png), linear-gradient(to top, var(--dark-blue-grey), var(--blueberry));
+    background-position-x: center;
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+    padding: 75px 0;
+}
+
+.pari h2{
+    font-size: 41px;
+    color: white;
+    text-align: center;
+}
+
+.pari hr{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: none;
+    height: 2px;
+    background-color: white;
+}
+
+.pari section{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+
+.left-content, .right-content{
+    width: 45%;
+}
+
+.left-content div{
+    display: flex;
+    align-items: center;
+}
+
+.left-content h3{
+    font-size: 21px;
+    color: white;
+    font-weight: 600;
+}
+
+.left-content > div span{
+    font-size: 17px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding:  0 21px;
+    background-color: white;
+    border-radius: 10px;
+    color: var(--dark-blue-grey);
+    margin-left: 55px;
+}
+
+.left-content p{
+    color: white;
+    margin-top: 32px;
+    font-weight: 500;
+}
+
+.left-content p span{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.right-content li{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.right-content button{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    color: var(--dark-blue-grey);
+    background-color: white;
+    margin-right: 28px;
+}
+
+.right-content p {
+    color: white;
+    font-weight: 500;
+
+}
+
+.pari .link-button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+/* MAIN PART 4 - PLAYERS */
+
+.joueurs section{
+    display: flex;
+}
+
+.joueurs section > div{
+    width: 50%;
+}
+
+.joueurs .joueurs-img{
+    width: 100%;
+}
+
+.joueurs .quote{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 110px;
+}
+
+.joueurs .quote-img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0,-70%);
+}
+
+.joueurs .citation{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.joueurs .citation span{
+    font-size: 72px;
+    line-height: 0px;
+}
+
+
+.joueurs .comm{
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-top: 24px;
+}
+
+/* FOOTER */
+
+footer > div{
+    padding-top: 67px;
+    padding-bottom: 24px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer{
+    background-color: var(--dark-pink);
+}
+
+footer .footer-content{
+    display: flex;
+    justify-content: space-between;
+    height: 255px;
+}
+
+.footer-content > ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer-content > ul li{
+    margin-top: 36px;
+    margin-right: 60px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+.footer-links{
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer-links ul{
+    display: flex;
+}
+
+.footer-links li{
+    margin-left: 7px;
+}
+
+footer hr{
+    height: 3px;
+    opacity: 0.35;
+    border: none;
+    background-color: #ffffff;
+    margin-top: 36px;
+}
+
+footer p{
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 1850px){
+    .bullet-points{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1365px){
+    .joueurs section .img{
+        display: none;
+    }
+
+    .joueurs section .quote {
+        width: 100%;
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .joueurs section{
+        background-image: url(../img/joueurs.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    header{
+        background-image: linear-gradient(to right, var(--dark-blue-grey), var(--blueberry));
+    }
+
+    header article {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1153px){
+    header .nav-container{
+        justify-content: center;
+    }
+
+    .nav-container nav{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .section-container{
+        display: block;
+    }
+
+    .section-container > div{
+        width: auto;
+    }
+
+    .fufu{
+        position: static;
+        transform: rotate(0deg);
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px){
+
+    .pari section{
+        display: block;
+    }
+
+    .left-content, .right-content{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .discover{
+        padding: 60px 50px;
+    }
+
+    header article, .arrow {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 610px){
+    header nav ul{
+        display: block;
+    }
+
+    .vignette-container{
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    .vignette{
+        margin-right: 0;
+        width: auto;
+    }
+
+    .vignette .content{
+        display: none;
+    }
+
+    .slider li {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .bullet-points{
+        display: none;
+    }
+
+    .slider{
+        margin-top: 20px;
+    }
+
+    .pari{
+        background-image: linear-gradient(to top, var(--dark-blue-grey), var(--blueberry));
+    }
+}
+
+@media screen and (max-width: 510px){
+    footer .footer-content{
+        height: auto;
+    }
+
+    header{
+        padding: 40px 50px;
+    }
+
+    h1, h2{
+        font-size: 30px !important;
+    }
+
+    .intro{
+        padding-bottom: 60px;
+    }
+
+    .intro .link-button{
+        margin-top: 60px;
+    }
+
+    .pari section{
+        margin-top: 50px;
+    }
+
+    .joueurs .citation{
+        font-size: 15px;
+    }
+
+    .joueurs .quote{
+        padding: 100px 50px;
+    }
+
+    .pari .link-button{
+        font-size: 11px;
+        margin-top: 75px;
+    }
+
+    footer .footer-content{
+        display: block;
+    }
+
+    .footer-links{
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 410px){
+    header article .link-button{
+        font-size: 15px;
+    }
+
+    .left-content > div span{
+        display: none;
+    }
+
+    .intro .desc{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 340px){
+    header article .link-button{
+        font-size: 11px;
+    }
+
+    .pari .link-button{
+        font-size: 10px;
+    }
+
+    .intro .link-button{
+        font-size: 15px;
+    }
+
+    hr{
+        width: 90% !important;
+    }
+
+    .right-content button {
+        display: none !important;
+    }
+}
