@@ -729,6 +729,10 @@ footer p{
     .intro .desc{
         font-size: 12px;
     }
+    
+    .right-content button {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 340px){
@@ -746,9 +750,5 @@ footer p{
 
     hr{
         width: 90% !important;
-    }
-
-    .right-content button {
-        display: none !important;
     }
 }
